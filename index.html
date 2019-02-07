@@ -2,56 +2,165 @@
 <html>
 
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <title>JS PROJECT YO!</title>
   <!-- <link href="stylesheets/application.css" type="text/css" rel="stylesheet" /> -->
-  <!-- <link rel="stylesheet" href="stylesheets/index.css" /> -->
-  <script src="bundle.js"></script>
+  <link rel="stylesheet" href="css/stylesheet.css" />
 
-  <script 
+  <style>
+    /* Set the size of the div element that contains the map */
+    #map {
+      height: 600px;
+      /* The height is 400 pixels */
+      width: 80%;
+      /* The width is the width of the web page */
+    }
+  </style>
+
+  <!-- <script src="bundle.js"></script> -->
+
+  <!-- <script 
     async defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuL5fQY9VggAt2DQPfyQCyigNvcZB0KUY &callback=initMap" 
-    type="text/javascript"></script>
+    type="text/javascript"></script> -->
 
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
- 
+      // var buttons = document.getElementsByTagName("button");
+      // for(let i = 0; i < buttons.length; i++) {
+      //   buttons[i].addEventListener(onclick, (e) => {
+      //     initMap(e.currentTarget.value);
+      //   })
+      // }
+
+      var crimeFilterButtons = document.getElementsByClassName("crime-filter-button")
+      for (let i = 0; i < crimeFilterButtons.length; i++) {
+        crimeFilterButtons[i].addEventListener("click", (e) => {
+          initMap(e.currentTarget.value);
+        })
+      }
+
+      let batteryInstances = [];
+      let theftInstances = [];
+      let assaultInstances = [];
+      let narcoticsInstances = [];
+      let motorVehicleTheftInstances = [];
+      let allInstances = [];
+
+      return $.ajax({
+        url: "https://data.cityofchicago.org/resource/6zsd-86xi.json?$where=date%20between%20%272019-01-5%27%20and%20%272019-02-5%27",
+        type: "GET",
+        data: {
+          "$limit": 1000,
+          "$$app_token": "wM4UmKIK1njJ3mRX8vC0J7Ba6"
+        }
+      }).then(function (data) {
+        // alert("Retrieved " + data.length + " records from the dataset!");
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].primary_type === "BATTERY") {
+            batteryInstances.push(data[i]);
+          }
+          else if (data[i].primary_type === "THEFT") {
+            theftInstances.push(data[i]);
+          }
+          else if (data[i].primary_type === "ASSAULT") {
+            assaultInstances.push(data[i]);
+          }
+          else if (data[i].primary_type === "NARCOTICS") {
+            narcoticsInstances.push(data[i]);
+          }
+          else if (data[i].primary_type === "MOTOR VEHICLE THEFT") {
+            motorVehicleTheftInstances.push(data[i]);
+          }
+          allInstances.push(data[i]);
+        }
+        
+        for (var i = 0; i < allInstances.length; i++) {
+          var coords = allInstances[i].location.coordinates;
+          var latLng = new google.maps.LatLng(coords[1], coords[0]);
+          var marker = new google.maps.Marker({
+            position: latLng,
+            map: map
+          });
+        }
+      });
     });
   </script>
-
 </head>
 
+
 <body>
-  <h1>JS PROJECT!</h1>
-  <div>
-    <form>
-      <div>
-        <input type="radio" id="BATTERY" name="filter" value="" checked>
-        <label for="BATTERY">BATTERY</label>
+
+  <h3>Google Mapzzzzzz</h3>
+
+  <div class="page">
+    <div class="page-left">
+      <div class="time-period">
+        <p class="time-period-title">Choose Time Period:</p>
+        <select class="time-period-choice" id="year" name="year">
+          <option class="yooo" selected>2019</option>
+          <option>2018</option>
+          <option>2017</option>
+          <option>2016</option>
+        </select>
       </div>
+
+      <div class="sort-crimes">
+        <p class="sort-crimes-title">Sort Crimes By:</p>
+        <form>
+          <div>
+            <button class="crime-filter-button">BATTERY</button>
+          </div>
       
-      <div>
-        <input type="radio" id="THEFT" name="filter" value="">
-        <label for="THEFT">THEFT</label>
-      </div>
+          <div>
+            <button class="crime-filter-button">THEFT</button>
+          </div>
       
-      <div>
-        <input type="radio" id="ASSAULT" name="filter" value="">
-        <label for="ASSAULT">ASSAULT</label>
+          <div>
+            <button class="crime-filter-button">ASSAULT</button>
+          </div>
+      
+          <div>
+            <button class="crime-filter-button">NARCOTICS</button>
+          </div>
+      
+          <div>
+            <button class="crime-filter-button">MOTOR VEHICLE THEFT</button>
+          </div>
+      
+        </form>
       </div>
 
-      <div>
-        <input type="radio" id="NARCOTICS" name="filter" value="">
-        <label for="NARCOTICS">NARCOTICS</label>
-      </div>
+    </div>
 
-      <div>
-        <input type="radio" id="MOTOR VEHICLE THEFT" name="filter" value="">
-        <label for="MOTOR VEHICLE THEFT">MOTOR VEHICLE THEFT</label>
-      </div>
+    <div id="map"></div>
 
-    </form>
+    <script>
+      //initialize and add the map
+      var map;
+      function initMap() {
+        var chicago = { lat: 41.8781, lng: -87.7 };
+
+        map = new google.maps.Map(
+          document.getElementById('map'), { zoom: 11, center: chicago });
+
+        var marker = new google.maps.Marker({ position: chicago, map: map });
+      }
+    </script>
   </div>
+
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuL5fQY9VggAt2DQPfyQCyigNvcZB0KUY &callback=initMap"
+    type="text/javascript"></script>
+
+
+  
+
+
+
+
 </body>
 
 </html>

@@ -1,0 +1,59 @@
+
+.page {
+  display: flex;
+}
+
+.page-left {
+  border: 1px solid blue;
+  text-align: center;
+}
+
+.time-period-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: blue;
+}
+
+.time-period-choice {
+  padding: 7px;
+  background: rgb(148, 148, 245);
+  color: white;
+  margin: 5px;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  outline: 0;
+}
+
+.time-period-choice:hover {
+  background: rgb(74, 74, 238);
+
+}
+
+/* types of crimes */
+.sort-crimes {
+
+  width: 200px;
+  /* text-align: center; */
+  padding: 50px;
+}
+
+.sort-crimes-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: blue;
+}
+
+.crime-filter-button {
+  padding: 7px;
+  background: rgb(148, 148, 245);
+  color: white;
+  margin: 5px;
+  cursor: pointer;
+  outline: 0;
+}
+
+.crime-filter-button:hover {
+  background: rgb(74, 74, 238);
+  border: 1px solid white;
+}
