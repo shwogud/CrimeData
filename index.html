@@ -3,6 +3,9 @@
 
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./lib/map.js"></script>
+
+
 
   <title>JS PROJECT YO!</title>
   <!-- <link href="stylesheets/application.css" type="text/css" rel="stylesheet" /> -->
@@ -20,74 +23,38 @@
 
   <!-- <script src="bundle.js"></script> -->
 
-  <!-- <script 
-    async defer 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuL5fQY9VggAt2DQPfyQCyigNvcZB0KUY &callback=initMap" 
-    type="text/javascript"></script> -->
-
+  <!-- <script>
+    function initMap(crimeType) {
+      Located in map.js
+    }
+  </script> -->
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // var buttons = document.getElementsByTagName("button");
-      // for(let i = 0; i < buttons.length; i++) {
-      //   buttons[i].addEventListener(onclick, (e) => {
-      //     initMap(e.currentTarget.value);
-      //   })
-      // }
+    //initialize and add the map
+    var map;
+    function initMap() {
+      var chicago = { lat: 41.8781, lng: -87.7 };
 
-      var crimeFilterButtons = document.getElementsByClassName("crime-filter-button")
-      for (let i = 0; i < crimeFilterButtons.length; i++) {
-        crimeFilterButtons[i].addEventListener("click", (e) => {
-          initMap(e.currentTarget.value);
-        })
-      }
+      map = new google.maps.Map(
+        document.getElementById('map'), { zoom: 11, center: chicago });
 
-      let batteryInstances = [];
-      let theftInstances = [];
-      let assaultInstances = [];
-      let narcoticsInstances = [];
-      let motorVehicleTheftInstances = [];
-      let allInstances = [];
+      var marker = new google.maps.Marker({ position: chicago, map: map });
+      debugger
+    }
 
-      return $.ajax({
-        url: "https://data.cityofchicago.org/resource/6zsd-86xi.json?$where=date%20between%20%272019-01-5%27%20and%20%272019-02-5%27",
-        type: "GET",
-        data: {
-          "$limit": 1000,
-          "$$app_token": "wM4UmKIK1njJ3mRX8vC0J7Ba6"
-        }
-      }).then(function (data) {
-        // alert("Retrieved " + data.length + " records from the dataset!");
-        for (let i = 0; i < data.length; i++) {
-          if (data[i].primary_type === "BATTERY") {
-            batteryInstances.push(data[i]);
-          }
-          else if (data[i].primary_type === "THEFT") {
-            theftInstances.push(data[i]);
-          }
-          else if (data[i].primary_type === "ASSAULT") {
-            assaultInstances.push(data[i]);
-          }
-          else if (data[i].primary_type === "NARCOTICS") {
-            narcoticsInstances.push(data[i]);
-          }
-          else if (data[i].primary_type === "MOTOR VEHICLE THEFT") {
-            motorVehicleTheftInstances.push(data[i]);
-          }
-          allInstances.push(data[i]);
-        }
-        
-        for (var i = 0; i < allInstances.length; i++) {
-          var coords = allInstances[i].location.coordinates;
-          var latLng = new google.maps.LatLng(coords[1], coords[0]);
-          var marker = new google.maps.Marker({
-            position: latLng,
-            map: map
-          });
-        }
-      });
-    });
+    
   </script>
+
+  <script 
+    async defer 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuL5fQY9VggAt2DQPfyQCyigNvcZB0KUY &callback=initMap" 
+    type="text/javascript"></script>
+
+
+  <script src="lib/getData.js">
+
+  </script>
+
 </head>
 
 
@@ -137,23 +104,12 @@
 
     <div id="map"></div>
 
-    <script>
-      //initialize and add the map
-      var map;
-      function initMap() {
-        var chicago = { lat: 41.8781, lng: -87.7 };
-
-        map = new google.maps.Map(
-          document.getElementById('map'), { zoom: 11, center: chicago });
-
-        var marker = new google.maps.Marker({ position: chicago, map: map });
-      }
-    </script>
+    
   </div>
 
-
+<!-- 
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuL5fQY9VggAt2DQPfyQCyigNvcZB0KUY &callback=initMap"
-    type="text/javascript"></script>
+    type="text/javascript"></script> -->
 
 
   
