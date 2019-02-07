@@ -4,7 +4,7 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="./lib/map.js"></script>
-
+  
 
 
   <title>JS PROJECT YO!</title>
@@ -14,7 +14,7 @@
   <style>
     /* Set the size of the div element that contains the map */
     #map {
-      height: 600px;
+      height: 900px;
       /* The height is 400 pixels */
       width: 80%;
       /* The width is the width of the web page */
@@ -33,10 +33,10 @@
     //initialize and add the map
     var map;
     function initMap() {
-      var chicago = { lat: 41.8781, lng: -87.7 };
+      var chicago = { lat: 41.9, lng: -87.7 };
 
       map = new google.maps.Map(
-        document.getElementById('map'), { zoom: 11, center: chicago });
+        document.getElementById('map'), { zoom: 13, center: chicago });
 
       var marker = new google.maps.Marker({ position: chicago, map: map });
       // debugger
@@ -45,10 +45,15 @@
     
   </script>
 
-  <script 
+  <!-- <script 
     async defer 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuL5fQY9VggAt2DQPfyQCyigNvcZB0KUY &callback=initMap" 
-    type="text/javascript"></script>
+    type="text/javascript"></script> -->
+
+    <script 
+      async defer 
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuL5fQY9VggAt2DQPfyQCyigNvcZB0KUY&libraries=visualization&callback=initMap">
+    </script>
 
 
   <script src="lib/getData.js">
@@ -78,6 +83,10 @@
         <p class="sort-crimes-title">Sort Crimes By:</p>
         <form>
           <div>
+            <button class="crime-filter-button">ALL</button>
+          </div>
+
+          <div>
             <button class="crime-filter-button">BATTERY</button>
           </div>
       
@@ -86,7 +95,7 @@
           </div>
       
           <div>
-            <button class="crime-filter-button">ASSAULT</button>
+            <button class="crime-filter-button">ROBBERY</button>
           </div>
       
           <div>
