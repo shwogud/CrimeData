@@ -1,17 +1,62 @@
+html {
+  /* background-color: blanchedalmond; */
+  margin: 0px;
+  padding: 0px;
+}
+.body {
+  margin: 0px;
+  padding: 0px;
+  background-color: blanchedalmond;
+}
+
+.header {
+  /* height: 200px;
+  background-color: blue; */
+}
+
+.js-title {
+  font-size: 25px;
+  color: white;
+  letter-spacing: 0.15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 175px;
+  font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(
+    rgba(92, 85, 114, 0.1),
+  rgba(98, 102, 121, 0.1)), 
+    url("../images/lit.jpg");
+}
 
 .page {
+  margin: 0px;
+  padding: 0px;
   display: flex;
+  background-color: blanchedalmond;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .page-left {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
   border: 1px solid blue;
   text-align: center;
+  width: 500px;
+}
+
+.time-period {
+  margin-top: 30px;
 }
 
 .time-period-title {
   font-size: 20px;
   font-weight: bold;
   color: blue;
+
 }
 
 .time-period-choice {
@@ -32,10 +77,10 @@
 
 /* types of crimes */
 .sort-crimes {
-
+  margin-top: 30px;
   width: 200px;
   /* text-align: center; */
-  padding: 50px;
+  /* padding: 28%; */
 }
 
 .sort-crimes-title {
@@ -56,4 +101,31 @@
 .crime-filter-button:hover {
   background: rgb(74, 74, 238);
   border: 1px solid white;
+}
+
+.david-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.david-links {
+  /* text-decoration: none; */
+  font-size: 19px;
+  padding: 5px;
+  color: black; 
+  transform: scaleX(0.95);
+  transition: all .2s ease-in-out;
+}
+
+.david-links:hover {
+  /* text-decoration: none; */
+  padding: 5px;
+  color: rgb(39, 0, 131);
+  transform: scaleX(1.1);
+}
+
+h3 {
+  padding: 0px;
+  margin: 10px;
 }

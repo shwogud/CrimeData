@@ -15,7 +15,7 @@
   <style>
     /* Set the size of the div element that contains the map */
     #map {
-      height: 900px;
+      height: 90vh;
       /* The height is 400 pixels */
       width: 80%;
       /* The width is the width of the web page */
@@ -45,7 +45,6 @@
       var marker = new google.maps.Marker({ position: chicago, map: map });
       var marker1 = new google.maps.Marker({ position: chicago1, map: map });
       // var marker1 = new google.maps.Marker({ position: chicago1, map: map });
-      // debugger
     }
   
 
@@ -70,9 +69,16 @@
 </head>
 
 
-<body>
+<header>
+  <div class="js-title">
+    <!-- <h1>Chicago Never Sleeps</h1> -->
+    <h1>Chicago? More like ChicagNO</h1>
 
-  <h3>Google Mapzzzzzz</h3>
+  </div>
+  
+
+</header>
+<body>
 
   <div class="page">
     <div class="page-left">
@@ -116,6 +122,13 @@
           </div>
       
         </form>
+      </div>
+
+      <div class="david-info">
+        <h3>David Ro</h3>
+        <h3>Contact Me!</h3>
+        <a class="david-links" href="https://www.linkedin.com/in/david-ro-493895aa/">LinkedIn</a>
+        <a class="david-links" href="https://github.com/shwogud">Github</a>
       </div>
 
     </div>
