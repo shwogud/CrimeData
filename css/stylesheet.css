@@ -2,11 +2,14 @@ html {
   /* background-color: blanchedalmond; */
   margin: 0px;
   padding: 0px;
+  background: linear-gradient(0deg, #232b42, #232b42);
 }
 .body {
   margin: 0px;
   padding: 0px;
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond; */
+  background: linear-gradient(0deg, #232b42, #232b42);
+  
 }
 
 .header {
@@ -16,26 +19,32 @@ html {
 
 .js-title {
   font-size: 25px;
-  color: white;
+  /* color: white; */
+      color: #a1abc6;
   letter-spacing: 0.15em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  height: 175px;
+  height: 150px;
   font-family: 'Montserrat', sans-serif;
-  background-image: linear-gradient(
+  background: linear-gradient(0deg, #232b42, #232b42);
+  /* background-image: linear-gradient(
     rgba(92, 85, 114, 0.1),
   rgba(98, 102, 121, 0.1)), 
-    url("../images/lit.jpg");
+    url("../images/lit.jpg"); */
 }
 
 .page {
   margin: 0px;
   padding: 0px;
   display: flex;
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond; */
   font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(0deg, #232b42, #232b42);
+    height: 100%;
+    width: 100%;
+    color: #a1abc6;
 }
 
 .page-left {
@@ -43,7 +52,7 @@ html {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   text-align: center;
   width: 500px;
 }
@@ -55,13 +64,14 @@ html {
 .time-period-title {
   font-size: 20px;
   font-weight: bold;
-  color: blue;
+  color: #a1abc6;
 
 }
 
 .time-period-choice {
   padding: 7px;
-  background: rgb(148, 148, 245);
+  /* background: rgb(148, 148, 245); */
+  background: linear-gradient(0deg, #232b42, #232b42);
   color: white;
   margin: 5px;
   width: 60px;
@@ -86,39 +96,59 @@ html {
 .sort-crimes-title {
   font-size: 20px;
   font-weight: bold;
-  color: blue;
+  color: #a1abc6;
+}
+
+.crime-filter-total {
+  margin-bottom: 4px;
 }
 
 .crime-filter-button {
+  
   padding: 7px;
-  background: rgb(148, 148, 245);
-  color: white;
+  /* background: rgb(148, 148, 245); */
+  color: #a1abc6;
   margin: 5px;
   cursor: pointer;
   outline: 0;
   text-align: center;
   width: 150px;
   font-size: 12px;
-  /* border: 3px solid red; */
-  
-  /* border-style: inset; */
+  border: 1px solid #a1abc6;
+  background: linear-gradient(0deg, #232b42, #232b42);
 }
-
+/* 
 .crime-filter-button:focus {
-  /* border: 1px solid red; */
   background-color: blue;
-}
+} */
 
 .crime-filter-button:hover {
-  background: rgb(74, 74, 238);
-  border: 1px solid white;
+  border: 2px solid #dadada;
+    border-radius: 7px;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
+
+.selected {
+  border: 2px solid #dadada;
+    border-radius: 7px;
+}
+.selected:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+/* .not-selected {
+  background: linear-gradient(0deg, #232b42, #232b42);
+} */
 
 .david-info {
   display: flex;
   flex-direction: column;
   margin-top: 70px;
-  border: 2px solid rgb(89, 0, 255);
+  border: 2px solid #a1abc6;
   padding: 10px;
 }
 
@@ -142,4 +172,23 @@ h3 {
   padding: 0px;
   margin: 10px;
 }
+
+i {
+  font-size: 50px;
+  color: #a1abc6;
+  padding: 10px;
+}
+
+i:hover {
+  /* border: 1px solid #a1abc6;
+  border-radius: 50%; */
+  outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+.david-info-email {
+  letter-spacing: 0.05  em;
+}
+
 

@@ -5,7 +5,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="./lib/map.js"></script>
   <!-- <script src="//d3js.org/d3.v3.min.js"></script> -->
-  
+
+  <link rel="stylesheet"
+    href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+<link rel="stylesheet"
+  href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
 
 
   <title>JS PROJECT YO!</title>
@@ -40,7 +49,90 @@
       var chicago1 = { lat: 41.5, lng: -87.5 };
 
       map = new google.maps.Map(
-        document.getElementById('map'), { zoom: 13, center: chicago });
+        document.getElementById('map'), { 
+          zoom: 13, 
+          center: chicago,
+          styles: [
+            { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+            { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+            { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#d59563' }]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#d59563' }]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{ color: '#263c3f' }]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#6b9a76' }]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{ color: '#38414e' }]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{ color: '#212a37' }]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#9ca5b3' }]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{ color: '#746855' }]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{ color: '#1f2835' }]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#f3d19c' }]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{ color: '#2f3948' }]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#d59563' }]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{ color: '#17263c' }]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#515c6d' }]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{ color: '#17263c' }]
+            }
+          ] 
+        });
 
       var marker = new google.maps.Marker({ position: chicago, map: map });
       var marker1 = new google.maps.Marker({ position: chicago1, map: map });
@@ -97,36 +189,35 @@
       <div class="sort-crimes">
         <p class="sort-crimes-title">Sort Crimes By:</p>
         <form>
-          <div>
-            <!-- <button class="crime-filter-button">ALL</button> -->
-            <input class="crime-filter-button" type="text" value="ALL">
+          <div class="crime-filter-total">
+            <button class="crime-filter-button">ALL</button>
+            <!-- <input class="crime-filter-button" type="text" value="ALL"> -->
           </div>
 
           <!-- <div>
             <button class="crime-filter-button">Credit Card Fraud</button>
           </div> -->
       
-          <div>
-            <!-- <navbutton class="crime-filter-button">OTOR VEHICLE THEFT</navbutton> -->
-            <!-- <button class="crime-filter-button">MOTOR VEHICLE THEFT</button> -->
-            <input class="crime-filter-button" type="text" value="MOTOR VEHICLE THEFT">
+          <div class="crime-filter-total">
+            <button class="crime-filter-button" type="button" autofocus>MOTOR VEHICLE THEFT</button>
+            <!-- <input class="crime-filter-button" type="button" value="MOTOR VEHICLE THEFT"> -->
             <!-- <input type="button"> -->
           </div>
       
-          <div>
-            <input class="crime-filter-button" type="text" value="HOMICIDE">
-            <!-- <button class="crime-filter-button">HOMICIDE</button> -->
+          <div class="crime-filter-total">
+            <!-- <input class="crime-filter-button" type="text" value="HOMICIDE"> -->
+            <button class="crime-filter-button">HOMICIDE</button>
             <!-- <button class="crime-filter-button">HOMICIDE</button> -->
           </div>
       
-          <div>
-            <input class="crime-filter-button" type="text" value="NARCOTICS">
-            <!-- <button class="crime-filter-button">NARCOTICS</button> -->
+          <div class="crime-filter-total">
+            <!-- <input class="crime-filter-button" type="text" value="NARCOTICS"> -->
+            <button class="crime-filter-button">NARCOTICS</button>
           </div>
       
-          <div>
-            <!-- <button class="crime-filter-button">CRIMINAL DAMAGE</button> -->
-            <input class="crime-filter-button" type="text" value="CRIMINAL DAMAGE">
+          <div class="crime-filter-total">
+            <button class="crime-filter-button">CRIMINAL DAMAGE</button>
+            <!-- <input class="crime-filter-button" type="text" value="CRIMINAL DAMAGE"> -->
           </div>
       
         </form>
@@ -134,9 +225,14 @@
 
       <div class="david-info">
         <h3>David Ro</h3>
-        <h3>Contact Me!</h3>
-        <a class="david-links" href="https://www.linkedin.com/in/david-ro-493895aa/">LinkedIn</a>
-        <a class="david-links" href="https://github.com/shwogud">Github</a>
+        <div>
+          <a href="https://www.linkedin.com/in/david-ro/"><i class="fab fa-linkedin linkedin-icon"></i></a>
+          <a href="https://github.com/shwogud"><i class="fab fa-github-square"></i></a>
+        </div>
+
+        <h3 class="david-info-email">Ro.David.J.17@gmail.com</h3>
+        <!-- <a class="david-links" href="https://www.linkedin.com/in/david-ro-493895aa/">LinkedIn</a>
+        <a class="david-links" href="https://github.com/shwogud">Github</a> -->
       </div>
 
     </div>
