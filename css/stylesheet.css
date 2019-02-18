@@ -57,12 +57,16 @@ html {
   width: 500px;
 }
 
+.page-right {
+  margin-right: 40px;
+}
+
 .time-period {
   margin-top: 20px;
 }
 
 .time-period-title {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   color: #a1abc6;
 
@@ -72,16 +76,19 @@ html {
   padding: 7px;
   /* background: rgb(148, 148, 245); */
   background: linear-gradient(0deg, #232b42, #232b42);
-  color: white;
+  color: #a1abc6;
   margin: 5px;
-  width: 60px;
+  width: 150px;
   height: 30px;
   cursor: pointer;
   outline: 0;
 }
 
 .time-period-choice:hover {
-  background: rgb(74, 74, 238);
+  /* background: rgb(74, 74, 238); */
+  outline: none;
+    border-color: #9ecaed;
+    /* box-shadow: 0 0 10px #9ecaed; */
 
 }
 
@@ -94,7 +101,7 @@ html {
 }
 
 .sort-crimes-title {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   color: #a1abc6;
 }
@@ -110,7 +117,7 @@ html {
   color: #a1abc6;
   margin: 5px;
   cursor: pointer;
-  outline: 0;
+  outline: none;
   text-align: center;
   width: 150px;
   font-size: 12px;
@@ -123,21 +130,24 @@ html {
 } */
 
 .crime-filter-button:hover {
-  border: 2px solid #dadada;
-    border-radius: 7px;
+  /* border: 2px solid #dadada; */
+    /* border-radius: 7px; */
     outline: none;
     border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+    /* box-shadow: 0 0 10px #9ecaed; */
 }
 
 .selected {
-  border: 2px solid #dadada;
-    border-radius: 7px;
+  /* border: 2px solid #dadada;
+    border-radius: 7px; */
+    background: #9ecaed;
+    color: #232b42;
 }
 .selected:focus { 
     outline: none;
     border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+
+    /* box-shadow: 0 0 10px #9ecaed; */
 }
 
 /* .not-selected {

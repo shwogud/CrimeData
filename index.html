@@ -51,6 +51,7 @@
       map = new google.maps.Map(
         document.getElementById('map'), { 
           zoom: 13, 
+          radius: 1,
           center: chicago,
           styles: [
             { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
@@ -199,7 +200,7 @@
           </div> -->
       
           <div class="crime-filter-total">
-            <button class="crime-filter-button" type="button" autofocus>MOTOR VEHICLE THEFT</button>
+            <button class="crime-filter-button">MOTOR VEHICLE THEFT</button>
             <!-- <input class="crime-filter-button" type="button" value="MOTOR VEHICLE THEFT"> -->
             <!-- <input type="button"> -->
           </div>
@@ -237,7 +238,7 @@
 
     </div>
 
-    <div id="map"></div>
+    <div class="page-right" id="map"></div>
 
     
   </div>
