@@ -17,7 +17,7 @@
 
 
 
-  <title>JS PROJECT YO!</title>
+  <title>Crime in Chicago</title>
   <!-- <link href="stylesheets/application.css" type="text/css" rel="stylesheet" /> -->
   <link rel="stylesheet" href="css/stylesheet.css" />
 
@@ -44,14 +44,13 @@
     var map;
     function initMap() {
 
-      var chicago = { lat: 41.9, lng: -87.7 };
+      var chicago = { lat: 41.875, lng: -87.65 };
 
-      var chicago1 = { lat: 41.5, lng: -87.5 };
+      // var chicago1 = { lat: 41.5, lng: -87.5 };
 
       map = new google.maps.Map(
         document.getElementById('map'), { 
           zoom: 13, 
-          radius: 1,
           center: chicago,
           styles: [
             { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
@@ -136,7 +135,7 @@
         });
 
       var marker = new google.maps.Marker({ position: chicago, map: map });
-      var marker1 = new google.maps.Marker({ position: chicago1, map: map });
+      // var marker1 = new google.maps.Marker({ position: chicago1, map: map });
       // var marker1 = new google.maps.Marker({ position: chicago1, map: map });
     }
   
@@ -165,7 +164,7 @@
 <header>
   <div class="js-title">
     <!-- <h1>Chicago Never Sleeps</h1> -->
-    <h1>Chicago? More like ChicagNO</h1>
+    <h1>Crime in Chicago</h1>
 
   </div>
   
