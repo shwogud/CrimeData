@@ -29,17 +29,12 @@ html {
   height: 150px;
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(0deg, #232b42, #232b42);
-  /* background-image: linear-gradient(
-    rgba(92, 85, 114, 0.1),
-  rgba(98, 102, 121, 0.1)), 
-    url("../images/lit.jpg"); */
 }
 
 .page {
   margin: 0px;
   padding: 0px;
   display: flex;
-  /* background-color: blanchedalmond; */
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(0deg, #232b42, #232b42);
     height: 100%;
@@ -50,9 +45,7 @@ html {
 .page-left {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
-  /* border: 1px solid blue; */
   text-align: center;
   width: 500px;
 }
@@ -74,7 +67,6 @@ html {
 
 .time-period-choice {
   padding: 7px;
-  /* background: rgb(148, 148, 245); */
   background: linear-gradient(0deg, #232b42, #232b42);
   color: #a1abc6;
   margin: 5px;
@@ -85,19 +77,15 @@ html {
 }
 
 .time-period-choice:hover {
-  /* background: rgb(74, 74, 238); */
   outline: none;
     border-color: #9ecaed;
-    /* box-shadow: 0 0 10px #9ecaed; */
 
 }
 
-/* types of crimes */
+
 .sort-crimes {
   margin-top: 20px;
   width: 200px;
-  /* text-align: center; */
-  /* padding: 28%; */
 }
 
 .sort-crimes-title {
@@ -113,7 +101,6 @@ html {
 .crime-filter-button {
   
   padding: 7px;
-  /* background: rgb(148, 148, 245); */
   color: #a1abc6;
   margin: 5px;
   cursor: pointer;
